@@ -10,18 +10,17 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import Loading from '../components/Loading';
 import AppWriteContext from '../app_write/AppWriteContext';
-import {useSafeAreaFrame} from 'react-native-safe-area-context';
 
 export const Routes = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const {appWrite, isLoggedIn, setIsLoggedIn} = useContext(AppWriteContext);
 
   useEffect(() => {
     appWrite
       .getUserDetails()
       .then(response => {
-        setIsLoading(false);
-        if (response) {
+        setIsLoading(false);        
+        if (response) {            
           setIsLoggedIn(true);
         }
       })

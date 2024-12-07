@@ -16,7 +16,7 @@ export const AppWriteContext = createContext<AppContextType>({
   setIsLoggedIn: () => {},
 });
 
-const AppWriteProvider: FC<PropsWithChildren> = ({children}) => {
+export const AppWriteProvider: FC<PropsWithChildren> = ({children}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const defaultValue = {
     appWrite: new AppWriteService(),
