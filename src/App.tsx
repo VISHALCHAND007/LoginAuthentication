@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  LogBox,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -9,11 +10,15 @@ import {
   View,
 } from 'react-native';
 
+import Loading from './components/Loading';
+
 function App(): React.JSX.Element {
   return (
     <SafeAreaView>
-      <StatusBar/>
-        <Text style={{color: '#ffffff', margin: 8, fontSize: 18}}>Testing</Text>
+      <StatusBar />
+      <Text style={{color: '#ffffff', margin: 8, fontSize: 18}}>Testing</Text>
+      <Loading />
+
     </SafeAreaView>
   );
 }
